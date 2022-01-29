@@ -3,6 +3,7 @@ var welcome_message = document.getElementById("welcome_message");
 var question = document.getElementById("question");
 var result_screen = document.getElementById("result-screen");
 var result_value = document.getElementById("result-value");
+var progress_bar = document.getElementById("progress_bar");
 
 var progress_value = 0;
 
@@ -41,8 +42,12 @@ function nextQuestion(value)
     }
     else
     {
+        progress_value++;
         DisplayResult(true)
     }
+
+    progress_bar.style = "width: " + (((progress_value -1)/(questions.length -1)) *100) + "%";
+    progress_bar.innerHTML = parseInt((((progress_value -1)/(questions.length -1)) *100))  + "%";
 }
 
 function DisplayResult(boolValue)
