@@ -37,6 +37,10 @@ function displaySurvey()
 
 function nextQuestion(value)
 {
+    
+    progress_bar.style = "width: " + (((progress_value)/(questions.length)) *100) + "%";
+    progress_bar.innerHTML = parseInt((((progress_value)/(questions.length)) *100))  + "%";
+    
     if (value == 1)
     {
         result = parseInt(progress_value / 4.1) + 1;
@@ -53,8 +57,6 @@ function nextQuestion(value)
         DisplayResult(result)
     }
 
-    progress_bar.style = "width: " + (((progress_value -1)/(questions.length -1)) *100) + "%";
-    progress_bar.innerHTML = parseInt((((progress_value -1)/(questions.length -1)) *100))  + "%";
 }
 
 function DisplayResult(result)
