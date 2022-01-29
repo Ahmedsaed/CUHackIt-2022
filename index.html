@@ -51,30 +51,33 @@
 
         
         <main>
-            <!-- Photo Editor -->
+            <!-- Survey -->
             <section>
                 <div class="display-5 text-muted ms-5 mb-3" id="editor">Survey</div>
-                <div class="container py-3 px-5 border border-3 rounded text-center shadow bg-light">
-                    <div class="mx-5">
-                        
-                    </div>
+                <div class="container py-3 px-5 border border-3 rounded shadow text-center bg-light">
                     <div class="progress mx-5">
                         <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
                     </div>
                     <hr/>
-                    <div class="m-3">
-                        <div id="question">
-                            <p class="fs-3 text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit?</p>
+
+                    <div id="welcome_message" class="m-3">
+                        <img src="static/imgs/welcome.png" class="img-fluid" alt="welcome"/>
+                        <br/>
+                        <br/>
+                        <button type="button" class="btn btn-primary" onclick="displaySurvey()">Start Survey</button>
+                    </div>
+
+                    <div id="questions_body" class="m-3" hidden="true">
+                        <div>
+                            <p id="question" class="fs-3 text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit?</p>
                         </div>
                         <br/>
                         <br/>
                         <br/>
                         <div id="form-buttons" class="">
-                            <button type="button" class="btn btn-primary">Very Yes</button>
                             <button type="button" class="btn btn-primary">Yes</button>
                             <button type="button" class="btn btn-primary">Neutral</button>
                             <button type="button" class="btn btn-primary">No</button>
-                            <button type="button" class="btn btn-primary">Very No</button>
                         </div>
                     </div>
                 </div>
