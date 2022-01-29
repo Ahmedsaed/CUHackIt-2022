@@ -2,10 +2,12 @@ var questions_body = document.getElementById("questions_body");
 var welcome_message = document.getElementById("welcome_message");
 var question = document.getElementById("question");
 var result_screen = document.getElementById("result-screen");
-var result_value = document.getElementById("result-value");
 var progress_bar = document.getElementById("progress_bar");
+var modal_button = document.getElementById("modal_button");
+var warning_value = document.getElementById("warning_value");
 
 var progress_value = 0;
+var result = 0
 
 const questions = [
     // COMMON SYMPTOMS
@@ -35,33 +37,42 @@ function displaySurvey()
 
 function nextQuestion(value)
 {
-    if (progress_value < questions.length - 1)
+    if (value == 1)
     {
-        progress_value++;
+        result = parseInt(progress_value / 4.1) + 1;
+    }
+
+    if (progress_value < questions.length)
+    {
         question.innerHTML = questions[progress_value];
+        progress_value++;
     }
     else
     {
         progress_value++;
-        DisplayResult(true)
+        DisplayResult(result)
     }
 
     progress_bar.style = "width: " + (((progress_value -1)/(questions.length -1)) *100) + "%";
     progress_bar.innerHTML = parseInt((((progress_value -1)/(questions.length -1)) *100))  + "%";
 }
 
-function DisplayResult(boolValue)
+function DisplayResult(result)
 {
     questions_body.hidden = true;
     result_screen.hidden = false;
-    if (boolValue)
+    modal_button.click();
+    if (result == 0)
     {
-        result_value.innerHTML = "You have corona";
-        result_value.style = "color: red";
+        warning_value.innerHTML = "Your condition doesn't seem serious concerning the Coronavirus infection. You have mild symptoms. If you are healthy and young you should be able to manage your symptoms at home. However, if these symptoms are growing on you or you are not feeling right, contact a doctor, please."
     }
-    else 
+    else if (result == 1)
     {
-        result_value.innerHTML = "You have good";
+        warning_value.innerHTML = "Your condition is worrying concerning the Coronavirus infection. Contact a doctor as soon as possible.";
+    }
+    else
+    {
+        warning_value.innerHTML = "Your condition is dangerous! Please contact a doctor or a medical facility immediately!";
     }
 }
 

@@ -68,23 +68,23 @@
                     </div>
 
                     <div id="questions_body" class="m-3" hidden="true">
+                        <br/>
+                        <br/>
+                        <br/>
                         <div>
-                            <p id="question" class="fs-3 text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit?</p>
+                            <p id="question" class="fs-2 text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit?</p>
                         </div>
                         <br/>
                         <br/>
                         <br/>
                         <div id="form-buttons">
-                            <button type="button" class="btn btn-primary" onclick="nextQuestion(0)">Yes</button>
-                            <button type="button" class="btn btn-primary" onclick="nextQuestion(0)">Neutral</button>
+                            <button type="button" class="btn btn-primary" onclick="nextQuestion(1)">Yes</button>
                             <button type="button" class="btn btn-primary" onclick="nextQuestion(0)">No</button>
                         </div>
                     </div>
                     
                     <div id="result-screen" hidden="true">
                         <img src="static/imgs/result.svg" class="img-fluid" alt="result"/>
-                        <br/>
-                        <p id="result-value" class="fs-5"></p>
                     </div>
                 </div>
             </section>
@@ -125,6 +125,28 @@
                 </div>
             </section>
         </main>
+
+        <!-- Button trigger modal -->
+        <button id="modal_button" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" hidden="true">
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="warning_value" class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+                </div>
+            </div>
+            </div>
+        </div>
 
         <!-- toasts -->
         <section>
