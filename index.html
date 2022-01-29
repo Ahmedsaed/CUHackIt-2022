@@ -74,11 +74,17 @@
                         <br/>
                         <br/>
                         <br/>
-                        <div id="form-buttons" class="">
-                            <button type="button" class="btn btn-primary">Yes</button>
-                            <button type="button" class="btn btn-primary">Neutral</button>
-                            <button type="button" class="btn btn-primary">No</button>
+                        <div id="form-buttons">
+                            <button type="button" class="btn btn-primary" onclick="nextQuestion(0)">Yes</button>
+                            <button type="button" class="btn btn-primary" onclick="nextQuestion(0)">Neutral</button>
+                            <button type="button" class="btn btn-primary" onclick="nextQuestion(0)">No</button>
                         </div>
+                    </div>
+                    
+                    <div id="result-screen" hidden="true">
+                        <img src="static/imgs/result.svg" class="img-fluid" alt="result"/>
+                        <br/>
+                        <p id="result-value" class="fs-5"></p>
                     </div>
                 </div>
             </section>
@@ -87,15 +93,35 @@
             <section id="doc" class="bg-light mt-5">
                 <div class="display-5 text-muted ms-5">More Info</div>
                 <div class="p-3 mx-5">
-                    <span>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis earum maxime dolor ratione, 
-                        eligendi consequatur distinctio reiciendis repellendus corporis laborum animi ipsum porro laboriosam
-                         asperiores quas magnam doloribus deleniti ullam quibusdam perspiciatis cumque ducimus culpa. Fuga, rerum corrupti? Iu
-                         sto magni voluptate voluptates dolores temporibus? Exercitationem, nulla explicabo. Aspernatur debitis quo quae accusamus, 
-                         <div class="callout callout-warning">
-                            eum nihil voluptatibus mollitia, reprehenderit nobis cumque atque officia quidem incidunt non. Dolores maiores id sint eius rerum vero provident laboriosam blanditiis corporis quas adipisci, illum ut consequatur quam optio laborum delectus temporibus tempora sequi! Nemo optio quo voluptates obcaecati aliquam at sunt pariatur architecto commodi, alias eligendi fugiat non consequatur. Ex repellendus, magni similique libero amet cumque odit incidunt dolorem et porro totam atque facilis dolorum fuga reiciendis quod delectus molestiae eveniet voluptate harum inventore provident velit quidem. Ad fugiat unde ex quos aliquid laudantium. Aliquid necessitatibus, exercitationem deleniti eius voluptatum illo doloribus tenetur iusto ut error mollitia reiciendis eum, harum nesciunt laborum. Blanditiis perspiciatis, itaque consectetur corporis magni esse, quisquam aut neque in expedita corrupti dignissimos voluptate sint quod nobis. Suscipit quaerat architecto ea atque quos beatae accusantium cupiditate necessitatibus, quisquam at dolorum debitis, dolore fugit deserunt dolores! Accusamus inventore doloribus modi iure sed dolore? Quaerat.
-                         </div>
-                    </span>
+                    <div class="callout callout-warning fs-6">
+                        This Survey is made by students taking their information from WHO (World Health Organization), which through their own words 
+                        is a list made for informational purposes only. So kindly, always consult your local medical authority for advice, don't base 
+                        your health status entirely on this Survey. The more proper way to find out if you have covid is through PCR 
+                        (Polymerase chain reaction), which is a commonly used molecular test where samples are collected from the nose and/or throat, 
+                        and the molecular test detects the virus in the sample by amplifying viral genetic material to detectable levels.
+                        <br/>
+                        <br/>
+                        If you have any of the serious symptoms, seek immediate medical attention and always call before visiting your doctor or health facility.
+                        People with mild symptoms who are otherwise healthy and young should manage their symptoms at home.
+                    </div>
+
+                    <p>
+                        <ul>
+                            <li>There is no evidence that people can catch COVID-19 from food. The virus that causes covid-19 can be killed at temperatures similar to that of other known viruses and bacteria found in food. </li>
+                            <li>The best household disinfectant for surfaces can be regular household cleaning and disinfection products. Products mostly based on ethanol are most helpful. </li>
+                            <li>On average it takes 5-6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days. </li>
+                            <li> It is safe to have groceries delivered if the provider follows good personal and food hygiene practices, and after accepting the delivery, hands must be properly washed. </li>
+                            <li>Older people and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illnesses.</li>
+                            <li>Quarantine is used for anyone who had contact with someone who has tested positive for corona where you remain separated from others because you have been exposed to it and may be infected, Isolation is used for people who have tested positive for the virus where you are completely separated from others.</li>
+                            <li>Antibiotics do not work against viruses but on bacterial infections only.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="display-5 text-muted ms-5">References:</div>
+                <div class="p-3 mx-5">
+                    <ul>
+                        <li><a href="https://www.who.int/" target="_blank">World Health Organization</a></li>
+                    </ul>
                 </div>
             </section>
         </main>

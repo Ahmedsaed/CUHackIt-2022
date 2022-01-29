@@ -127,3 +127,7 @@ canvas {
     background-color: #f0f7fd;
     border-color: #d0e3f0;
 }
+
+li {
+    font-size: larger;
+}
