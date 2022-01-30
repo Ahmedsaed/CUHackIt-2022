@@ -131,7 +131,6 @@ img {
     width: 40%;
 }
 
-
 @media only screen and (max-width: 800px) {
     img {
       width:100%;
