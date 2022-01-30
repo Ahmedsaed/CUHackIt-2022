@@ -19,12 +19,6 @@ nav .navbar-brand .green
     color: #2e944b;
 }
 
-canvas {
-    width: 100%;
-    margin: auto;
-    background: #ececec;
-}
-
 .btn:focus {
     outline: none;
     box-shadow: none;
@@ -131,4 +125,15 @@ canvas {
 li {
     font-size: larger;
     margin-bottom: 10px;
+}
+
+img {
+    width: 40%;
+}
+
+
+@media only screen and (max-width: 800px) {
+    img {
+      width:100%;
+    }
 }
