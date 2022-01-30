@@ -31,8 +31,8 @@ const questions = [
 
 function displaySurvey()
 {
-    questions_body.hidden = false;
     welcome_message.hidden = true;
+    questions_body.hidden = false;
 }
 
 function nextQuestion(value)
@@ -95,10 +95,11 @@ fetch("https://api.covidtracking.com/v1/us/current.json")
     return response.json()
   })
   .then(data => {
-      console.log(data[0])
+    console.log(data[0])
     updateValues(data[0])
   })
   .catch(error => console.log(error))
+
 
 function updateValues(data)
 {
@@ -107,5 +108,5 @@ function updateValues(data)
     death.innerHTML = "Total Death(s): " + data.death;
     hospitalizedCurrently.innerHTML = "Hospitalized Currently: " + data.hospitalizedCurrently;
     positive.innerHTML = "Positive Case(s): " + data.positive;
-    recovered.innerHTML = "Recovered Case(s): " + ((data.recovered == "null") ? data.recovered : "No Data");
+    recovered.innerHTML = "Recovered Case(s): " + ((data.recovered != null) ? data.recovered : "No Data");
 }
