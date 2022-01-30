@@ -64,18 +64,22 @@ function DisplayResult(result)
     questions_body.hidden = true;
     result_screen.hidden = false;
     modal_button.click();
-    if (result == 1 || result == 0)
-    {
-        warning_value.innerHTML = "Your condition doesn't seem serious concerning the Coronavirus infection. You have mild symptoms. If you are healthy and young you should be able to manage your symptoms at home. However, if these symptoms are growing on you or you are not feeling right, contact a doctor, please."
+    console.log(result);
+
+    switch(result) {
+        case 0:
+            warning_value.innerHTML = "You don't seem to have any symptoms relative to the corona-virus infection. However if you're not feeling well, try to contact your doctor";
+            break;
+        case 1:
+            warning_value.innerHTML = "Your condition doesn't seem serious concerning the Coronavirus infection. You have mild symptoms. If you are healthy and young you should be able to manage your symptoms at home. However, if these symptoms are growing on you or you are not feeling right, contact a doctor, please."
+            break;
+        case 2:
+            warning_value.innerHTML = "Your condition is worrying concerning the Coronavirus infection. Contact a doctor as soon as possible.";
+            break;
+        default:
+            warning_value.innerHTML = "Your condition is dangerous! Please contact a doctor or a medical facility immediately!";
     }
-    else if (result == 2)
-    {
-        warning_value.innerHTML = "Your condition is worrying concerning the Coronavirus infection. Contact a doctor as soon as possible.";
-    }
-    else
-    {
-        warning_value.innerHTML = "Your condition is dangerous! Please contact a doctor or a medical facility immediately!";
-    }
+
 }
 
 nextQuestion(0);
