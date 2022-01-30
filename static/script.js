@@ -79,3 +79,30 @@ function DisplayResult(result)
 }
 
 nextQuestion(0);
+
+var death = document.getElementById("death");
+var hospitalizedCurrently = document.getElementById("hospitalizedCurrently");
+var positive = document.getElementById("positive");
+var recovered = document.getElementById("recovered");
+
+fetch("https://api.covidtracking.com/v1/us/current.json")
+  .then(response => {
+    // indicates whether the response is successful (status code 200-299) or not
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${reponse.status}`)
+    }
+    return response.json()
+  })
+  .then(data => {
+      console.log(data[0])
+    updateValues(data[0])
+  })
+  .catch(error => console.log(error))
+
+function updateValues(data)
+{
+    death.innerHTML = "Total Death(s): " + data.death;
+    hospitalizedCurrently.innerHTML = "Hospitalized Currently: " + data.hospitalizedCurrently;
+    positive.innerHTML = "Positive Case(s): " + data.positive;
+    recovered.innerHTML = "Recovered Case(s): " + data.recovered;
+}
