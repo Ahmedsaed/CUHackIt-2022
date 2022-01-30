@@ -84,6 +84,7 @@ var death = document.getElementById("death");
 var hospitalizedCurrently = document.getElementById("hospitalizedCurrently");
 var positive = document.getElementById("positive");
 var recovered = document.getElementById("recovered");
+var date = document.getElementById("date");
 
 fetch("https://api.covidtracking.com/v1/us/current.json")
   .then(response => {
@@ -101,8 +102,10 @@ fetch("https://api.covidtracking.com/v1/us/current.json")
 
 function updateValues(data)
 {
+    fdate = String(data.date);
+    date.innerHTML = fdate.substring(0,4) + "-" + fdate.substring(4,6) + "-" + fdate.substring(6,8) + " • Covid Tracker";
     death.innerHTML = "Total Death(s): " + data.death;
     hospitalizedCurrently.innerHTML = "Hospitalized Currently: " + data.hospitalizedCurrently;
     positive.innerHTML = "Positive Case(s): " + data.positive;
-    recovered.innerHTML = "Recovered Case(s): " + data.recovered;
+    recovered.innerHTML = "Recovered Case(s): " + ((data.recovered == "null") ? data.recovered : "No Data");
 }
